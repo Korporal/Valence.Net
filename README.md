@@ -1,5 +1,5 @@
 # Valence.Net
-A .Net component for programmatic access to the Brightspace REST API.
+A .Net component for programmatic access to the Brightspace REST API "Valence".
 
 This repository contains a class library component designed to encapsulate access to the Valence REST API provided by Desire To Learn as part of their Brightspace product offering.
 
