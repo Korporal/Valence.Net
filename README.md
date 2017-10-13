@@ -11,7 +11,7 @@ The component strives to meet these objectives:
 * Simplify working with paged result sets.
 * Make Valence easier to work with using .Net's LINQ services.
 * Provide a systematic means of reprersenting Valence errors via custom exceptions.
-* Simply how applications deal with API versions.
+* Simplify how applications deal with API versions.
 * Provide robust argument checking.
 * Readonly mode to ensure no update operations can be made when testing.
 
