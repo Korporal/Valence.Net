@@ -12,7 +12,7 @@ The component strives to meet these objectives:
 * Make Valence easier to work with using .Net's LINQ services.
 * Provide a systematic means of reprersenting Valence errors via custom exceptions.
 * Simplify how applications deal with API versions.
-* Provide robust argument checking.
+* Provide robust argument checking prior to REST request being made.
 * Readonly mode to ensure no update operations can be made when testing.
 
 The initial library is wholly synchronous and expanding this to expose asynchronous support is anticipated for a future version.
