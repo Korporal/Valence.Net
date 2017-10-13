@@ -14,6 +14,12 @@ The component strives to meet these objectives:
 * Simplify how applications deal with API versions.
 * Provide robust argument checking prior to REST request being made.
 * Readonly mode to ensure no update operations can be made when testing.
+* Easy to use as a "query" engine when combined with LINQPad.
+
+The following future objectives are envisaged:
+
+* A LINQPad driver to make it easier to use from LINQPad.
+* A logging capability to record an audit trail of all operations.
 
 The initial library is wholly synchronous and expanding this to expose asynchronous support is anticipated for a future version.
 
