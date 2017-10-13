@@ -21,3 +21,4 @@ The following future objectives are envisaged:
 * A LINQPad driver to make it easier to use from LINQPad.
 * A logging capability to record an audit trail of all operations.
 * Async method support.
+* Published as a NuGet package.
