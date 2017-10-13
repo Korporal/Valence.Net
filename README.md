@@ -13,6 +13,7 @@ The component strives to meet these objectives:
 * Provide a systematic means of reprersenting Valence errors via custom exceptions.
 * Simply how applications deal with API versions.
 * Provide robust argument checking.
+* Readonly mode to ensure no update operations can be made when testing.
 
 The initial library is wholly synchronous and expanding this to expose asynchronous support is anticipated for a future version.
 
