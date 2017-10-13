@@ -20,8 +20,4 @@ The following future objectives are envisaged:
 
 * A LINQPad driver to make it easier to use from LINQPad.
 * A logging capability to record an audit trail of all operations.
-
-The initial library is wholly synchronous and expanding this to expose asynchronous support is anticipated for a future version.
-
-
-
+* Async method support.
