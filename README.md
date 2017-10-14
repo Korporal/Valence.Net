@@ -6,6 +6,7 @@ This repository contains a class library component designed to encapsulate acces
 The component strives to meet these objectives:
 
 * Generate concrete classes and methods from an XML defintion files using T4 template technology.
+* Creates partial classes to ease user extsensibility.
 * Eliminate the need for .Net developers to deal with HTTP aspects of Valence.
 * Provide concrete classes that equate to the numerous JSON types used by Valence.
 * Simplify working with paged result sets.
