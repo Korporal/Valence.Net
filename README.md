@@ -37,27 +37,27 @@ Here's an example of how we define an endpoint method in the XML file used by th
           <Parameter Name="orgUnitId" Type="D2LID"/>
           <Parameter Name="userId" Type="D2LID"/>
         </Parameters>
-        <Return Type="List[Grade.ComputableGradeValue]"/>
+        <Return Type="List[Grade.BasicGradeValue]"/>
       </Method>
 
     </MethodClass>
 
 This generates a method with this signature:
 
-    public List<Grade.ComputableGradeValue> GetAllGradesForUser (string version, string orgUnitId, string userId) 
+    public List<Grade.BasicGradeValue> GetAllGradesForUser (string version, string orgUnitId, string userId) 
 
 Which is accessed at runtime like this:
 
     var grades = session.Grades.GetAllGradesForUser("latest","1234","0123"); // use the latest version 
     
-The grades result is a list of ComputableGrade objects:
+The grades result is a list of BasicGradeValue objects:
 
     namespace Valence.Grade
     {
         /// <summary>
         /// The framework can provide grade values slightly differently depending upon whether the underlying grade object type is a computable value, or not (basically, only Text (4) grade types are not computable).
         /// </summary>
-        public class ComputableGradeValue 
+        public class BasicGradeValue 
         {
             // SEE: http://docs.valence.desire2learn.com/res/grade.html#Grade.GradeValue
             public string UserId { get;  set; }
@@ -72,10 +72,11 @@ The grades result is a list of ComputableGrade objects:
             public string GradeObjectTypeName { get;  set; }
             public RichText Comments { get;  set; }
             public RichText PrivateComments { get;  set; }
-            public double? PointsNumerator { get; set; }
-            public double? PointsDenominator { get;  set; }
-            public double? WeightedDenominator { get;  set; }
-            public double? WeightedNumerator { get;  set; }
-        }
+         }
     }
 
+(In reality there is also a ComputedGradeValue type derived from the above and the actual type at runtime might be either).
+
+Over time all of the supported endpoints will be defined and thus comprehensive support for the full API set will be available.
+
+The output from the project is a Nuget package that developers can simply include in their applications to begin working with Valence.
