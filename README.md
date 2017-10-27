@@ -80,3 +80,12 @@ The grades result is a list of BasicGradeValue objects:
 Over time all of the supported endpoints will be defined and thus comprehensive support for the full API set will be available.
 
 The output from the project is a Nuget package that developers can simply include in their applications to begin working with Valence.
+
+# Version Support
+
+The class library offers helpful support for managing versions. A ValenceSession instance when created, automatically probes Valence for all available version information for all available products and retains this information.
+
+You can then set a default version for a product in that session instance. Most of the valence methods take a string version number as their first argument. This can be "latest", "default", "unstable" or a valid version number string.
+
+This lets you leverage some specific version of a product for most operations with the ability to use some specific version for slected methods where this may be required.
+
