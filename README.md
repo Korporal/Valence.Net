@@ -38,27 +38,27 @@ Here's an example of how we define an endpoint method in the XML file used by th
           <Parameter Name="orgUnitId" Type="D2LID"/>
           <Parameter Name="userId" Type="D2LID"/>
         </Parameters>
-        <Return Type="List[Grade.BasicGradeValue]"/>
+        <Return Type="List[Grade.GradeValue]"/>
       </Method>
 
     </MethodClass>
 
 This generates a method with this signature:
 
-    public List<Grade.BasicGradeValue> GetAllGradesForUser (string version, long orgUnitId, long userId) 
+    public List<Grade.GradeValue> GetAllGradesForUser (string version, long orgUnitId, long userId) 
 
 Which is accessed at runtime like this:
 
     var grades = session.Grades.GetAllGradesForUser("latest",1234,0123); // use the latest version 
     
-The grades result is a list of BasicGradeValue objects:
+The grades result is a list of BasicGradeValue (or ComputableGradaVelue) objects, e.g.
 
     namespace Valence.Grade
     {
         /// <summary>
         /// The framework can provide grade values slightly differently depending upon whether the underlying grade object type is a computable value, or not (basically, only Text (4) grade types are not computable).
         /// </summary>
-        public class BasicGradeValue 
+        public class BasicGradeValue : GradeValue
         {
             // SEE: http://docs.valence.desire2learn.com/res/grade.html#Grade.GradeValue
             public long UserId { get;  set; }
@@ -76,9 +76,7 @@ The grades result is a list of BasicGradeValue objects:
          }
     }
 
-(In reality there is also a ComputableGradeValue type derived from the above and the actual type at runtime might be either).
-
-Over time all of the supported endpoints will be defined and thus comprehensive support for the full API set will be available.
+Over time all of the supported endpoints will be defined in the template's XML metadata file and thus comprehensive support for the full API set will become available.
 
 The output from the project is a Nuget package that developers can simply include in their applications to begin working with Valence.
 
