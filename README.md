@@ -45,11 +45,11 @@ Here's an example of how we define an endpoint method in the XML file used by th
 
 This generates a method with this signature:
 
-    public List<Grade.BasicGradeValue> GetAllGradesForUser (string version, string orgUnitId, string userId) 
+    public List<Grade.BasicGradeValue> GetAllGradesForUser (string version, long orgUnitId, long userId) 
 
 Which is accessed at runtime like this:
 
-    var grades = session.Grades.GetAllGradesForUser("latest","1234","0123"); // use the latest version 
+    var grades = session.Grades.GetAllGradesForUser("latest",1234,0123); // use the latest version 
     
 The grades result is a list of BasicGradeValue objects:
 
@@ -61,13 +61,13 @@ The grades result is a list of BasicGradeValue objects:
         public class BasicGradeValue 
         {
             // SEE: http://docs.valence.desire2learn.com/res/grade.html#Grade.GradeValue
-            public string UserId { get;  set; }
-            public string OrgUnitId { get;  set; }
+            public long UserId { get;  set; }
+            public long OrgUnitId { get;  set; }
             public string DisplayedGrade { get;  set; }
             /// <summary>
             /// Unique global ID, can be used when updating a grade.
             /// </summary>
-            public string GradeObjectIdentifier { get;  set; }
+            public long GradeObjectIdentifier { get;  set; }
             public string GradeObjectName { get;  set; }
             public GRADEOBJ_T GradeObjectType { get;  set; }
             public string GradeObjectTypeName { get;  set; }
@@ -76,7 +76,7 @@ The grades result is a list of BasicGradeValue objects:
          }
     }
 
-(In reality there is also a ComputedGradeValue type derived from the above and the actual type at runtime might be either).
+(In reality there is also a ComputableGradeValue type derived from the above and the actual type at runtime might be either).
 
 Over time all of the supported endpoints will be defined and thus comprehensive support for the full API set will be available.
 
