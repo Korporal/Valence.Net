@@ -8,7 +8,7 @@ The component strives to meet these objectives:
 * Generate concrete container classes with appropriate methods, using an XML defintion file and T4 template technology.
 * Creates partial classes enabling helper methods to be easily implemented.
 * Eliminate the need for .Net developers to deal with HTTP aspects of Valence.
-* Provide concrete classes that equate to the numerous JSON types used by Valence (over 100 classes).
+* Provide concrete classes that equate to the numerous JSON types used by Valence (over 200 classes).
 * Follow Valence's namespace naming conventions for all JSON classes.
 * Simplify working with paged result sets.
 * Make Valence easier to work with using .Net's LINQ services.
